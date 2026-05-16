@@ -5,6 +5,7 @@
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "skipLibCheck": true,
+    "types": ["vite/client", "react", "react-dom"],
 
     /* JSX */
     "jsx": "react-jsx",
