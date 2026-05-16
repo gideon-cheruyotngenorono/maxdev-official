@@ -1,0 +1,125 @@
+.testimonial-featured {
+  padding: 48px;
+  text-align: center;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tf-quote {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.3;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.tf-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--on-surface);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.tf-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tf-avatar, .tc-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--surface-container-high), var(--surface-container));
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.tf-stars, .tc-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #FFD700;
+  font-size: 1rem;
+}
+
+.tf-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.tf-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--outline-variant);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tf-dot.active {
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--glow-primary);
+  width: 30px;
+  border-radius: var(--radius-full);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  padding: 28px;
+}
+
+.tc-stars {
+  margin-bottom: 14px;
+}
+
+.tc-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.tc-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tc-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .testimonial-featured { padding: 32px 24px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .tf-text { font-size: 1rem; }
+}

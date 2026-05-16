@@ -1,0 +1,90 @@
+.security-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.shield-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: rotate-slow linear infinite;
+}
+
+.ring-1 {
+  width: 180px; height: 180px;
+  border-color: rgba(0,255,240,0.2);
+  animation-duration: 20s;
+  box-shadow: 0 0 20px var(--glow-primary);
+}
+.ring-2 {
+  width: 140px; height: 140px;
+  border-color: rgba(0,210,255,0.2);
+  animation-duration: 15s;
+  animation-direction: reverse;
+  box-shadow: 0 0 15px var(--glow-secondary);
+}
+.ring-3 {
+  width: 100px; height: 100px;
+  border-color: rgba(120,41,255,0.3);
+  animation-duration: 10s;
+  box-shadow: 0 0 15px var(--glow-tertiary);
+}
+
+.shield-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.security-card, .ai-card {
+  padding: 28px;
+  height: 100%;
+}
+
+.sec-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.security-card h3, .ai-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.security-card p, .ai-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+  .ai-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .security-grid { grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; }
+}

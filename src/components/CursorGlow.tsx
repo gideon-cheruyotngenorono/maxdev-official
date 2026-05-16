@@ -1,0 +1,38 @@
+import { useEffect, useState } from 'react'
+
+export default function CursorGlow() {
+  const [pos, setPos] = useState({ x: -200, y: -200 })
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window
+    if (isTouchDevice) return
+
+    const handleMove = (e: MouseEvent) => {
+      setPos({ x: e.clientX, y: e.clientY })
+      if (!visible) setVisible(true)
+    }
+    const handleLeave = () => setVisible(false)
+    const handleEnter = () => setVisible(true)
+
+    window.addEventListener('mousemove', handleMove)
+    document.addEventListener('mouseleave', handleLeave)
+    document.addEventListener('mouseenter', handleEnter)
+    return () => {
+      window.removeEventListener('mousemove', handleMove)
+      document.removeEventListener('mouseleave', handleLeave)
+      document.removeEventListener('mouseenter', handleEnter)
+    }
+  }, [visible])
+
+  return (
+    <div
+      className="cursor-glow"
+      style={{
+        left: pos.x,
+        top: pos.y,
+        opacity: visible ? 1 : 0,
+      }}
+    />
+  )
+}
